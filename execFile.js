@@ -1,0 +1,18 @@
+const { execFile } = require('child_process');
+
+const fileName = './some-bash-file.sh';
+
+execFile(fileName, (error, stdout, stderr) => {
+
+  if (error) {
+    console.log(`error: ${error}`);
+    return;
+  }
+
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+    return;
+  }
+
+  console.log(`stdout: ${stdout}`);
+});
